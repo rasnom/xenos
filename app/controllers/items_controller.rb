@@ -4,6 +4,10 @@ class ItemsController < ApplicationController
 		@items = Item.all
 	end
 
+	def show
+		@item = Item.find(params[:id])
+	end
+
 	def new
 		@item = Item.new
 	end
@@ -12,6 +16,8 @@ class ItemsController < ApplicationController
 		@new_item = Item.new(item_params)
 		if @new_item.save
 			redirect_to '/items'
+		else
+			render :new
 		end
 	end
 
