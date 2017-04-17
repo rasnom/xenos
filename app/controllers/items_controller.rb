@@ -17,11 +17,14 @@ class ItemsController < ApplicationController
 		if @new_item.save
 			redirect_to '/items'
 		else
+			@item = @new_item
 			render :new
 		end
 	end
 
-	def item_params
-		params.require(:item).permit(:name, :ingredients, :description, :price, :category_id)
-	end
+	private
+
+		def item_params
+			params.require(:item).permit(:name, :ingredients, :description, :price, :category_id)
+		end
 end
