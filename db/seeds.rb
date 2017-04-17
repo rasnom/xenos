@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+categories = [
+	{ name: 'Small Plates', order: 1 },
+	{ name: 'Cocktails', order: 2 },
+	{ name: 'Ambrosias', order: 3 },
+	{ name: 'Desserts', order: 4 }
+]
+
+Category.create(categories)
+
 sample_starters = [
 	{ name: 'Green Fig Salad', price: 9, category_id: 1 },
 	{ name: 'Sardine Salad', price: 9, category_id: 1 },
